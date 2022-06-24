@@ -1,16 +1,11 @@
 # body_goal_app
+Body Goal Apps ini adalah sebuah alat pembantu untuk pembentukan badan secara ideal akan lebih terarah dan lebih mudah karena rata - rata kegiatan dapat dilakukan di rumah apalagi di masa pandemi Sekarang ini. Selain itu pengguna aplikasi nantinya dapat melihat resep makanan dan kalori makanan tersebut. Sehingga pengguna aplikasi akan lebih cepat mendapatkan bentuk tubuh yang mereka inginkan. 
 
-A new Flutter project.
+UI explain
 
-## Getting Started
+![image](https://user-images.githubusercontent.com/80303709/173237221-da72cb47-cc87-462d-acee-cbda0068c57d.png)
 
-This project is a starting point for a Flutter application.
+![image](https://user-images.githubusercontent.com/80303709/175569294-2adc67b9-a718-41e5-be6c-66e979c1bc26.png)
 
-A few resources to get you started if this is your first Flutter project:
+![image](https://user-images.githubusercontent.com/80303709/175569662-db2e7af8-8275-4f41-b0b8-0b3ac0a7ef71.png)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
