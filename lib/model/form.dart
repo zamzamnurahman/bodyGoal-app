@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 import '../theme.dart';
 
 class Formulir extends StatelessWidget {
-  TextEditingController controller;
-  String nama;
-  IconData icon;
-  bool obsecure;
+  TextEditingController? controller;
+  String? nama;
+  IconData? icon;
+  bool? obsecure;
 
   Formulir({this.controller, this.nama, this.icon, this.obsecure});
 

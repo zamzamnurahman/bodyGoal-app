@@ -1,4 +1,4 @@
-import 'package:body_goal_app/homepage_resep.dart';
+import 'package:body_goal_app/homepage.dart';
 import 'package:body_goal_app/model/form.dart';
 import 'package:body_goal_app/sign_up.dart';
 import 'package:body_goal_app/theme.dart';
@@ -150,7 +150,7 @@ class _SignInState extends State<SignIn> {
                     _password.text == '123123') {
                   Navigator.of(context)
                       .pushReplacement(MaterialPageRoute(builder: (context) {
-                    return Homepage_resep();
+                    return Homepage();
                   }));
                 } else {
                   print("masukan username dan password");
