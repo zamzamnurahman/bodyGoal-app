@@ -1,4 +1,4 @@
-import 'package:body_goal_app/homepage_resep.dart';
+import 'package:body_goal_app/homepage.dart';
 import 'package:body_goal_app/model/form.dart';
 import 'package:body_goal_app/theme.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +9,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  String gender;
+  String? gender;
   var _username = TextEditingController();
   var _email = TextEditingController();
   var _noHp = TextEditingController();
@@ -180,7 +180,7 @@ class _SignUpState extends State<SignUp> {
                 if (_username.text != '' && _password.text != '') {
                   Navigator.of(context)
                       .pushReplacement(MaterialPageRoute(builder: (context) {
-                    return Homepage_resep();
+                    return Homepage();
                   }));
                 } else {
                   print("Masukkan data diri anda");
