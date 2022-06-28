@@ -70,61 +70,110 @@ class _ResepMasakState extends State<ResepMasak> {
               ),
               Container(
                 height: 120,
-                child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        margin: const EdgeInsets.only(left: 30),
-                        child: Row(
-                          children: List.generate(
-                              widget.resep!.masak!.length,
-                              (index) => GestureDetector(
-                                    onTap: () {
-                                      _pageC.animateTo(
-                                        MediaQuery.of(context).size.width *
-                                            index,
-                                        duration:
-                                            const Duration(milliseconds: 500),
-                                        curve: Curves.fastOutSlowIn,
-                                      );
-                                    },
-                                    child: Container(
-                                      width: 20,
-                                      height: 20,
-                                      margin: const EdgeInsets.symmetric(
-                                        horizontal: 5,
-                                      ),
-                                      decoration: BoxDecoration(
-                                        color: Colors.red,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                            widget.resep!.masak!.length,
+                            (index) => GestureDetector(
+                                  onTap: () {
+                                    _pageC.animateTo(
+                                      MediaQuery.of(context).size.width * index,
+                                      duration:
+                                          const Duration(milliseconds: 500),
+                                      curve: Curves.fastOutSlowIn,
+                                    );
+                                  },
+                                  child: Container(
+                                    width: 15,
+                                    height: 15,
+                                    margin: const EdgeInsets.symmetric(
+                                      horizontal: 5,
+                                    ),
+                                    decoration: BoxDecoration(
+                                        color: pageIndex == index
+                                            ? Color(0xFF013B8D)
+                                            : Colors.white,
                                         borderRadius:
                                             BorderRadius.circular(100),
-                                      ),
-                                    ),
-                                  )),
-                        ),
+                                        border: Border.all(
+                                          width: 1,
+                                          color: pageIndex != index
+                                              ? Color(0xFF013B8D)
+                                              : Colors.white,
+                                        )),
+                                  ),
+                                )),
                       ),
-                      Visibility(
-                        child: GestureDetector(
-                          onTap: () {},
-                          child: Container(
-                            height: 70,
-                            width: 70,
-                            alignment: Alignment.bottomRight,
-                            margin:
-                                const EdgeInsets.only(bottom: 40, right: 40),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
+                    ),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          GestureDetector(
+                            onTap: () {
+                              if (pageIndex >= 0) {
+                                _pageC.animateTo(
+                                  MediaQuery.of(context).size.width *
+                                      pageIndex--,
+                                  duration: const Duration(milliseconds: 500),
+                                  curve: Curves.fastOutSlowIn,
+                                );
+                              }
+                              print(pageIndex);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 150,
+                              alignment: Alignment.bottomRight,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      width: 2,
+                                      color: Color(
+                                        0xFF013B8D,
+                                      )),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: const Center(
+                                  child: Text('Sebelumnya',
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold,
+                                          color: Color(0xFF013B8D)))),
                             ),
-                            decoration: BoxDecoration(
-                                color: Colors.green,
-                                borderRadius: BorderRadius.circular(50)),
-                            child: const Center(
-                                child: Icon(Icons.arrow_forward,
-                                    color: Colors.white, size: 30)),
                           ),
-                        ),
-                      ),
-                    ]),
+                          GestureDetector(
+                            onTap: () {
+                              if (pageIndex < widget.resep!.masak!.length) {
+                                _pageC.animateTo(
+                                  MediaQuery.of(context).size.width *
+                                      pageIndex++,
+                                  duration: const Duration(milliseconds: 500),
+                                  curve: Curves.fastOutSlowIn,
+                                );
+                              }
+                              print(pageIndex);
+                            },
+                            child: Container(
+                              height: 50,
+                              width: 150,
+                              alignment: Alignment.bottomRight,
+                              decoration: BoxDecoration(
+                                  color: Color(0xFF013B8D),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: const Center(
+                                  child: Text('Selanjutnya',
+                                      style: TextStyle(
+                                          fontSize: 17,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white))),
+                            ),
+                          ),
+                        ]),
+                  ],
+                ),
               ),
             ]),
       ),
