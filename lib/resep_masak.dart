@@ -26,8 +26,7 @@ class _ResepMasakState extends State<ResepMasak> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Container(
-                height: MediaQuery.of(context).size.height / 2,
+              Expanded(
                 child: PageView(
                   controller: _pageC,
                   onPageChanged: (int page) {
